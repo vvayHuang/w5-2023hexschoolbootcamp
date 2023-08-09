@@ -1,0 +1,43 @@
+.aside {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: 296px;
+  height: 100vh;
+}
+
+.navbar {
+  &-brand {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+
+  .nav {
+    &-item{
+      margin-bottom: 16px;
+    }
+    &-link {
+      padding: 4px 32px;
+      position: relative;
+      font-size: 16px;
+      .material-symbols-outlined,.material-icons{
+        vertical-align: middle;
+        font-size: 20px;
+        margin-right: 16px;
+      }
+      &.active {
+        color: $success;
+
+        &::before {
+          border-left: 4px solid $success;
+          position: absolute;
+          content: "";
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

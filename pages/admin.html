@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - answer dashboard</title>
+    <style>
+        #admin {
+            color: #198754;
+        }
+
+        #admin::before {
+            border-left: 4px solid #198754;
+            position: absolute;
+            content: "";
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex">
+        <%- include('./layout/aside'); -%>
+            <main class="main">
+                <header class="header">
+                    <nav class="navbar navbar-expand-lg bg-white">
+                        <div class="d-flex w-100">
+                            <h1 class="fs-4 mb-0 me-4">Admin</h1>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav w-100 justify-content-between align-items-center">
+                                    <li class="nav-item dropdown mb-0">
+                                        <a class="nav-link px-4 py-0 fw-bold" href="#" role="button"
+                                            data-bs-toggle="modal" data-bs-target="#new-admin-modal">
+                                            <span class="material-icons me-0 ms-2 text-success fs-4">
+                                                add
+                                            </span>
+                                            Add New Admin
+                                        </a>
+                                    </li>
+                                    <li class="nav-item mb-0">
+                                        <a class="nav-link d-inline-block" href="#">
+                                            <span class="material-symbols-outlined me-0">
+                                                search
+                                            </span>
+                                        </a>
+                                        <a class="nav-link d-inline-block" href="#">
+                                            <span class="material-icons me-0">
+                                                notifications_active
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <section class="content container-fluid">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="border-dark">
+                                <th scope="col">ID<span class="material-icons text-success" style="font-size: 12px;">
+                                        arrow_downward
+                                    </span></th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">#1</th>
+                                <td>Emir Wicks</td>
+                                <td>emir.wicks@mail.com</td>
+                                <td>Yes</td>
+                                <td>
+                                    <a class="d-inline-block text-black me-4" href="#" role="button"
+                                        data-bs-toggle="modal" data-bs-target="#view-modal">
+                                        <span class="material-icons">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a class="d-inline-block text-black" href="#" role="button" data-bs-toggle="modal"
+                                        data-bs-target="#edit-admin-modal">
+                                        <span class="material-icons">
+                                            edit
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item">
+                                <a class="page-link link-success" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link link-success" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link link-success" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link link-success" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link link-success" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+            </main>
+            <%- include('./layout/new-admin-modal'); -%>
+                <%- include('./layout/edit-admin-modal'); -%>
+                    <%- include('./layout/view-modal'); -%>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>
